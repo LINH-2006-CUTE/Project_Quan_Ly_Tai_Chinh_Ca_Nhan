@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  height: 60px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 60px);
+  background-color: #f5f6fa;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #fff;
+  border-right: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+/* Dashboard */
+.dashboard {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  overflow-y: auto;
+  /* border: 1px solid green; */
+}

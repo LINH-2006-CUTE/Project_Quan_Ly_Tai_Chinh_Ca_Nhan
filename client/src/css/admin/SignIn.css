@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff;
+}
+
+.box-main {
+  width: 546px;
+  height: 562px;
+  /* border: 1px solid #cf2222; */
+  padding: 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* title */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title-main {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
+}
+
+.title-main span {
+  color: #4338ca;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.title p {
+  margin-top: 10px;
+  color: #212529;
+
+  font-family: Roboto;
+  font-size: 26.578px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 33.6px;
+}
+
+/*  input */
+.content-input {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.content-input input {
+  height: 56px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 110px 11px 21px;
+
+  font-size: 16px;
+  background-color: #f8f9fa;
+}
+
+.content-input input:focus {
+  outline: none;
+  border-color: #4338ca;
+}
+
+/* check box  */
+.remember {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 35px;
+
+  color: #212529;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.remember label {
+  margin-left: 5px;
+}
+
+.register a {
+  color: #4338ca;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+/* button */
+.btn-signin {
+  width: 457px;
+  height: 42px;
+  padding: 11.5px 0;
+  background-color: #4338ca;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.btn-signin:hover {
+  background-color: #352ea5;
+}
+
+/* Footer */
+.footer {
+  color: rgba(33, 37, 41, 0.75);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
