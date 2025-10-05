@@ -46,19 +46,19 @@ export default function Dashboard() {
           <p>Lorem ipsum dolor sit amet.</p>
           <ul>
             <li>
-              <div>👩 Jenny Wilson</div>
+              <div> Jenny Wilson</div>
               <span>$11,234</span>
             </li>
             <li>
-              <div>👨 Devon Lane</div>
+              <div> Devon Lane</div>
               <span>$11,159</span>
             </li>
             <li>
-              <div>👩 Jane Cooper</div>
+              <div> Jane Cooper</div>
               <span>$10,483</span>
             </li>
             <li>
-              <div>👩‍🦰 Dianne Russell</div>
+              <div> Dianne Russell</div>
               <span>$9,084</span>
             </li>
           </ul>
