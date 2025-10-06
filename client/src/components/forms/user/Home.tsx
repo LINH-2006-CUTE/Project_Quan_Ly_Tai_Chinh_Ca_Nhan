@@ -158,7 +158,7 @@ import { LuNotebook } from "react-icons/lu";
 import { FaAngleDown } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
 import { FaChartBar } from "react-icons/fa";
-//ant
+//antd
 import { Modal } from "antd";
 import { useNavigate } from "react-router-dom";
 
@@ -166,10 +166,10 @@ export default function HomePage() {
   const [budget, setBudget] = useState("");
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const navigate = useNavigate();
-
   const handleLogout = () => {
     setShowLogoutModal(false);
     alert("Đăng xuất thành công");
+    // chuyển sang trang đăng nhập
     navigate("/signin");
   };
 
