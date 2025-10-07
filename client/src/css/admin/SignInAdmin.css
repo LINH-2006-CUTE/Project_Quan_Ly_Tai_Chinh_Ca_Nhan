@@ -63,10 +63,11 @@ body {
   height: 56px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  padding: 10px 110px 11px 21px;
-
+  padding: 10px 16px;
   font-size: 16px;
   background-color: #f8f9fa;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .content-input input:focus {
@@ -129,4 +130,14 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+}
+/* error */
+.error-input {
+  border-color: red !important;
+}
+
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
 }

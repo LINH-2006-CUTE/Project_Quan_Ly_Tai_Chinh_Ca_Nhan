@@ -53,7 +53,7 @@ export default function SignInPage() {
     // đăng nhập thành công
     setSuccess(true);
     setErrors({ nameUser: "", password: "" });
-
+    localStorage.setItem("currentUser", JSON.stringify(user)); // lưu vào userr
     setNameUser("");
     setPassword("");
 
