@@ -10,6 +10,13 @@ import {
   ResponsiveContainer,
   Area,
 } from "recharts";
+
+//img
+import Jenny from "../../../assets/img/jenny.svg";
+import Devon from "../../../assets/img/devon.svg";
+import Jane from "../../../assets/img/jane.svg";
+import Dianne from "../../../assets/img/dianne.svg";
+
 export default function Dashboard() {
   // bieu do
   const data = [
@@ -121,10 +128,7 @@ export default function Dashboard() {
 
           <ul className="customers-list">
             <li>
-              <img
-                src="https://randomuser.me/api/portraits/women/1.jpg"
-                alt="Jenny Wilson"
-              />
+              <img src={Jenny} alt="Jenny Wilson" />
               <div className="info">
                 <h4>Jenny Wilson</h4>
                 <p>jenny-wilson@gmail.com</p>
@@ -136,10 +140,7 @@ export default function Dashboard() {
             </li>
 
             <li>
-              <img
-                src="https://randomuser.me/api/portraits/men/2.jpg"
-                alt="Devon Lane"
-              />
+              <img src={Devon} alt="Devon Lane" />
               <div className="info">
                 <h4>Devon Lane</h4>
                 <p>devon-lane@gmail.com</p>
@@ -151,10 +152,7 @@ export default function Dashboard() {
             </li>
 
             <li>
-              <img
-                src="https://randomuser.me/api/portraits/women/3.jpg"
-                alt="Jane Cooper"
-              />
+              <img src={Jane} alt="Jane Cooper" />
               <div className="info">
                 <h4>Jane Cooper</h4>
                 <p>jane-cooper@gmail.com</p>
@@ -166,10 +164,7 @@ export default function Dashboard() {
             </li>
 
             <li>
-              <img
-                src="https://randomuser.me/api/portraits/women/4.jpg"
-                alt="Dianne Russell"
-              />
+              <img src={Dianne} alt="Dianne Russell" />
               <div className="info">
                 <h4>Dianne Russell</h4>
                 <p>dianne-russell@gmail.com</p>

@@ -1,102 +1,6 @@
-// import { useState, useEffect } from "react";
-// import "../../../css/admin/SignInAdmin.css";
-
-// export default function SignIn() {
-//   const [username, setUsername] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [error, setError] = useState("");
-
-//   useEffect(() => {
-//     const adminAccount = {
-//       username: "admin",
-//       password: "123456",
-//       role: "admin",
-//       name: "Administrator",
-//     };
-
-//     const admins = JSON.parse(localStorage.getItem("admins") || "[]");
-//     const exist = admins.some((a: any) => a.username === "admin");
-
-//     if (!exist) {
-//       admins.push(adminAccount);
-//       localStorage.setItem("admins", JSON.stringify(admins));
-//     }
-//   }, []);
-
-//   const handleSignIn = () => {
-//     const admins = JSON.parse(localStorage.getItem("admins") || "[]");
-
-//     const foundAdmin = admins.find(
-//       (a: any) => a.username === username && a.password === password
-//     );
-
-//     if (!username || !password) {
-//       setError("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!");
-//     } else if (!foundAdmin) {
-//       setError("Tài khoản hoặc mật khẩu không đúng!");
-//     } else {
-//       setError("");
-//       localStorage.setItem("currentAdmin", JSON.stringify(foundAdmin));
-//       alert("Đăng nhập thành công ✅");
-//       // 👉 sau này chuyển hướng đến /admin/dashboard
-//     }
-//   };
-
-//   return (
-//     <div className="box-main">
-//       {/* title */}
-//       <div className="title">
-//         <h3 className="title-main">
-//           Financial <span>Manager</span>
-//         </h3>
-//         <p>Please sign in</p>
-//       </div>
-
-//       {/* input */}
-//       <div className="content-input">
-//         <input
-//           type="text"
-//           placeholder="Please enter your username ..."
-//           value={username}
-//           onChange={(e) => setUsername(e.target.value)}
-//         />
-//         <input
-//           type="password"
-//           placeholder="Please enter your password ..."
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//         />
-//       </div>
-
-//       {/* Hiển thị lỗi */}
-//       {error && <p className="error-text">{error}</p>}
-
-//       {/* check box */}
-//       <div className="remember">
-//         <div>
-//           <input type="checkbox" id="remember" />
-//           <label htmlFor="remember">Remember me</label>
-//         </div>
-//         <div className="register">
-//           Don’t have an account,&nbsp;
-//           <a href="#">click here !</a>
-//         </div>
-//       </div>
-
-//       {/* button */}
-//       <button className="btn-signin" onClick={handleSignIn}>
-//         Sign in
-//       </button>
-
-//       {/* footer */}
-//       <p className="footer">&#169; 2025 - Rikkei Education</p>
-//     </div>
-//   );
-// }
-
 import { useState, useEffect } from "react";
 import "../../../css/admin/SignInAdmin.css";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SignInAdmin() {
   const [username, setUsername] = useState("");
@@ -104,8 +8,8 @@ export default function SignInAdmin() {
   const [errorUsername, setErrorUsername] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [error, setError] = useState("");
-  const [loginAttempts, setLoginAttempts] = useState(0);
-  // const navigate = useNavigate();
+  // const [loginAttempts, setLoginAttempts] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // tài khoản admin sẵn
@@ -144,7 +48,7 @@ export default function SignInAdmin() {
 
     if (username === "admin" && password === "123456") {
       localStorage.setItem("currentAdmin", username);
-      // navigate("/admin/dashboard"); //dashboard
+      navigate("/admin/dashboard"); //dashboard
     } else {
       setError("Incorrect username or password!");
     }
@@ -154,28 +58,12 @@ export default function SignInAdmin() {
       return;
     }
 
-    // Kiểm tra mật khẩu
-    if (foundAdmin.password !== password) {
-      const newAttempts = loginAttempts + 1;
-      setLoginAttempts(newAttempts);
-
-      if (newAttempts >= 3) {
-        // Sau 3 lần sai -> khóa tài khoản
-        foundAdmin.isBlocked = true;
-        localStorage.setItem("admins", JSON.stringify(admins));
-        setError("Your account blocked!, Please contact admin");
-      } else {
-        setError("Incorrect account or password!");
-      }
-      return;
-    }
-
     setError("");
     localStorage.setItem("currentAdmin", JSON.stringify(foundAdmin));
     alert("Sign in successfully");
 
-    // sang trang admin chính
-    // navigate("/admin/dashboard");
+    // sang trang admin uer
+    navigate("/admin/adminuser");
   };
 
   return (

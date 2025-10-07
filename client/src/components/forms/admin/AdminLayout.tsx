@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../../forms/common/Navbar";
-import Sidebar from "../../forms/common/Sidebar";
-import "../../../css/admin/AdminLayout.css"; // nếu có
+import Navbar from "../common/Navbar";
+import Sidebar from "../common/Sidebar";
+import "../../../css/admin/AdminLayout.css";
 
 export default function AdminLayout() {
   return (
@@ -10,7 +10,7 @@ export default function AdminLayout() {
       <div className="main-layout">
         <Sidebar />
         <div className="content">
-          <Outlet /> {/* phần nội dung thay đổi giữa Dashboard / User */}
+          <Outlet />
         </div>
       </div>
     </div>

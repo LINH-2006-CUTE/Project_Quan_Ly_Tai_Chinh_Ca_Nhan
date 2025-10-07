@@ -235,7 +235,9 @@ function AdminUser() {
 
   const allUsers = [...defaultUsers, ...normalizedStored];
   const [users, setUsers] = useState(
-    JSON.parse(localStorage.getItem("users_admin") || "null") || allUsers
+    JSON.parse(localStorage.getItem("users_admin") || "[]").length > 0
+      ? JSON.parse(localStorage.getItem("users_admin") || "[]")
+      : allUsers
   );
 
   const [searchTerm, setSearchTerm] = useState("");

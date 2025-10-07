@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../../../css/user/signUp.css";
 import usersData from "../../../data/users.json";
 import { useNavigate, Link } from "react-router-dom";
-
 interface User {
   nameUser: string;
   password: string;
@@ -14,7 +13,6 @@ if (!localStorage.getItem("users")) {
 }
 
 export default function SignUpPage() {
-  // router
   const navigate = useNavigate();
 
   const [nameUser, setnameUser] = useState("");
@@ -83,6 +81,30 @@ export default function SignUpPage() {
     // chuyển hướng
     setTimeout(() => navigate("/signin"), 1000);
   };
+
+  // thêm sang danh sách admin
+  const adminUsers = JSON.parse(localStorage.getItem("users_admin") || "[]");
+  const convertedUser = {
+    id: Date.now(),
+    name: nameUser,
+    email: "—",
+    phone: "—",
+    gender: "—",
+    status: "Active",
+  };
+  localStorage.setItem(
+    "users_admin",
+    JSON.stringify([...adminUsers, convertedUser])
+  );
+
+  setnameUser("");
+  setPassword("");
+  setConfirmPassword("");
+  setErrors({ nameUser: "", password: "", confirmPassword: "" });
+  setSuccess(true);
+
+  // chuyển hướng
+  setTimeout(() => navigate("/signin"), 1000);
 
   return (
     <div className="signup-page">
